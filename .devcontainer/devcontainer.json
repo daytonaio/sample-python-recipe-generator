@@ -1,6 +1,8 @@
 {
   "name": "Python 3 with Streamlit",
   "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "workspaceFolder": "/workspaces/sample-python-recipe-generator",
+  "runArgs": ["-w", "/workspaces/sample-python-recipe-generator"],
   "forwardPorts": [8501],
   "customizations": {
     "vscode": {
@@ -25,5 +27,5 @@
       ]
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
 }
